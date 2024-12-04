@@ -114,6 +114,40 @@ module datapath #(
       .DATA(ALU_RES),
       .A(AC)
   );
+  
+  Register_sync_rw_inc #(
+      .W(16)
+  ) IR_reg (
+      .clk(clk),
+      .reset(0),
+      .write(IR_write),
+      .increment(0),
+      .DATA(common_bus),
+      .A(IR)
+  );
+  
+    Register_sync_rw_inc #(
+        .W(16)
+    ) TR_reg (
+        .clk(clk),
+        .reset(TR_clear),
+        .write(TR_write),
+        .increment(TR_increment),
+        .DATA(common_bus),
+        .A(TR)
+    );
+
+
+    Register_sync_rw_inc #(
+        .W(8)
+    ) OUTR_reg (
+        .clk(clk),
+        .reset(0),
+        .write(OUTR_write),
+        .increment(0),
+        .DATA(common_bus),
+        .A(OUTR)
+    );
 
 
 

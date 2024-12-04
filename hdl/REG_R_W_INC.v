@@ -5,8 +5,8 @@ module Register_sync_rw_inc #(
     reset,
     write,
 	increment,
-    input [WIDTH-1:0] DATA,
-    output reg [WIDTH-1:0] A
+    input [W-1:0] DATA,
+    output reg [W-1:0] A
 );
 
   always @(posedge clk) begin
