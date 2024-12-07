@@ -2,6 +2,10 @@ module controller (
     input clk,
     input [15:0] IR,
     input [15:0] databus,
+    input E,
+    input IEN,
+    input FGI,
+    input FGO,
 
     output reg MEM_write,
 
@@ -38,30 +42,6 @@ module controller (
 
 );
 
-  // localparam AND = 3'b000;
-  // localparam ADD = 3'b001;
-  // localparam LDA = 3'b010;
-  // localparam STA = 3'b011;
-  // localparam BUN = 3'b100;
-  // localparam BSA = 3'b101;
-  // localparam ISZ = 3'b110;
-
-
-  // localparam BUS_AR = 3'b001;
-  // localparam BUS_PC = 3'b010;
-  // localparam BUS_DR = 3'b011;
-  // localparam BUS_AC = 3'b100;
-  // localparam BUS_IR = 3'b101;
-  // localparam BUS_TR = 3'b110;
-  // localparam BUS_MEM = 3'b111;
-
-
-  // localparam ALU_ADD = 3'b000;
-  // localparam ALU_AND = 3'b001;
-  // localparam ALU_TRANSFER = 3'b010;
-  // localparam ALU_COMPLEMENT = 3'b011;
-  // localparam ALU_SHIFT_RIGHT = 3'b100;
-  // localparam ALU_SHIFT_LEFT = 3'b101;
 
   // wire declarations
 
@@ -70,9 +50,10 @@ module controller (
   wire [3:0] SC_count;
   wire [7:0] D;
   wire [15:0] T;
-  reg I;
+  wire I;
   wire I_set;
   wire I_clear = 0;  // always 0
+  wire R;
 
 
   //module declerations 
@@ -112,6 +93,14 @@ module controller (
       .Q(I)
   );
 
+  DFF R_DFF (
+      .D(1),
+      .clock(clk),
+      .clear(0),
+      .enable(R_set),
+      .Q(R)
+  );
+
   Enc_8_3 Bus_enc (
       .A(bus_preload),
       .Y(BUS)
@@ -123,11 +112,13 @@ module controller (
   // 
 
 
-  
+
 
   wire reg_ref = D[7] & (~I) & T[3];  // calculation for register reference mode. 
   wire ind_ref = (~D[7]) & I & T[3];  // calculation for indirect reference mode
-  
+  wire R_set = ((~T[0]) & (~T[1]) & (~T[2]) & IEN & (FGI | FGO));
+  wire R_clear = R & T[2];
+
 
   // Different read signals for BUS 
   wire no_read;
@@ -142,17 +133,17 @@ module controller (
   wire [7:0] bus_preload = {
     mem_read, tr_read, ir_read, ac_read, dr_read, pc_read, ar_read, no_read
   };
-  
+
 
   // ----- Read signals for BUS -----
   assign mem_read = T[1] & ind_ref | ((D[0] | D[1] | D[2] | D[6]) & T[4]);
-  assign ar_read  = (D[4] & T[4]) | (D[5] & T[5]);
-  assign pc_read  = T[0] | (D[5] & T[4]);
-  assign dr_read  = (D[2] & D[5]) | (D[6] & T[6]);
-  assign ac_read  = D[3] & T[4];
-  assign ir_read  = T[2];
-  assign tr_read  = 0;  // always 0 since no interrupt is implemented
-  assign no_read  = 0;  // no read signal
+  assign ar_read = (D[4] & T[4]) | (D[5] & T[5]);
+  assign pc_read = (T[0] & (~R)) | (D[5] & T[4]);
+  assign dr_read = (D[2] & D[5]) | (D[6] & T[6]);
+  assign ac_read = (D[3] & T[4]) | (reg_ref & (IR[4] | IR[5] | IR[6]));
+  assign ir_read = T[2];
+  assign tr_read = R & T[1];  // always 0 since no interrupt is implemented
+  assign no_read = 0;  // no read signal
 
 
 
@@ -162,28 +153,28 @@ module controller (
   assign AR_write = T[0] | T[2] | ind_ref;  // calculation for AR write
   assign AR_clear = 0;  // always 0 since no interrupt is implemented
   assign AR_increment = D[5] & T[4];
+
+  assign PC_write = (D[4] & T[4]) | (D[5] & T[5]);  // calculation for PC write
+  assign PC_clear = 0;  // always 0 since no interrupt is implemented
+  assign PC_increment = T[1] | (D[6] & T[6] & (databus == 0)) |
+                        (reg_ref & ((IR[4] & (~databus[15])) | 
+                                    (IR[5] & databus[15]) |
+                                    (IR[6] & (databus == 0)) |
+                                    (IR[7] & E)));
+
+  assign DR_write = T[4] & (D[0] | D[1] | D[2] | D[6]);  // calculation for DR write
+  assign DR_clear = 0;  // always 0 since no interrupt is implemented
+  assign DR_increment = D[6] & T[5];
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  assign AC_write = (T[5] & (D[0] | D[1] | D[2])) | (reg_ref & (IR[6] | IR[7] | IR[9]));  // calculation for AC write
+  assign AC_clear = reg_ref & IR[11];  // always 0 since no interrupt is implemented
+  assign AC_increment = reg_ref & IR[5];
+  
+  assign IR_write = (~R) & T[1] ; 
+  
+  assign TR_write = R & T[0] ; 
+  assign TR_increment = 0; 
+  assign TR_clear = 0;  
 
 
 

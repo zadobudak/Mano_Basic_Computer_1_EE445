@@ -30,6 +30,9 @@ module datapath #(
     input OUTR_write,
     output reg [15:0] data_out
 );
+
+
+
   wire [15:0] common_bus;
   wire [11:0] AR;
   wire [11:0] PC;
@@ -44,7 +47,12 @@ module datapath #(
 
   wire ALU_CO;
   wire E;
+  wire IEN;
 
+
+  //   TODO : connect needed signals 
+
+  // ALU module instantiation
   ALU #(
       .W(16)
   ) Alu_module (
@@ -59,6 +67,7 @@ module datapath #(
       .Z  ()
   );
 
+  // E register for ALU
   Register_sync_rw_inc #(
       .W(1)
   ) E_reg (
@@ -69,7 +78,20 @@ module datapath #(
       .DATA(ALU_CO),
       .A(E)
   );
+  
+  // IEN register 
+  Register_sync_rw_inc #(
+	  .W(1)
+  ) IEN_reg (
+	  .clk(clk),
+	  .reset(0),
+	  .write(0),
+	  .increment(0),
+	  .DATA(),
+	  .A(IEN)
+  );
 
+  // Address Register instantiation
   Register_sync_rw_inc #(
       .W(12)
   ) AR_reg (
@@ -77,10 +99,12 @@ module datapath #(
       .reset(AR_clear),
       .write(AR_write),
       .increment(AR_increment),
-      .DATA(common_bus),
+      .DATA(common_bus[11:0]),
       .A(AR)
   );
 
+
+  // Program Counter instantiation
   Register_sync_rw_inc #(
       .W(12)
   ) PC_reg (
@@ -88,11 +112,11 @@ module datapath #(
       .reset(PC_clear),
       .write(PC_write),
       .increment(PC_increment),
-      .DATA(common_bus),
+      .DATA(common_bus[11:0]),
       .A(PC)
   );
 
-
+  // Data Register instantiation
   Register_sync_rw_inc #(
       .W(16)
   ) DR_reg (
@@ -114,7 +138,7 @@ module datapath #(
       .DATA(ALU_RES),
       .A(AC)
   );
-  
+
   Register_sync_rw_inc #(
       .W(16)
   ) IR_reg (
@@ -125,29 +149,40 @@ module datapath #(
       .DATA(common_bus),
       .A(IR)
   );
+
+  Register_sync_rw_inc #(
+      .W(16)
+  ) TR_reg (
+      .clk(clk),
+      .reset(TR_clear),
+      .write(TR_write),
+      .increment(TR_increment),
+      .DATA(common_bus),
+      .A(TR)
+  );
+
+
+  Register_sync_rw_inc #(
+      .W(8)
+  ) OUTR_reg (
+      .clk(clk),
+      .reset(0),
+      .write(0),
+      .increment(0),
+      .DATA(),
+      .A(OUTR)
+  );
   
-    Register_sync_rw_inc #(
-        .W(16)
-    ) TR_reg (
-        .clk(clk),
-        .reset(TR_clear),
-        .write(TR_write),
-        .increment(TR_increment),
-        .DATA(common_bus),
-        .A(TR)
-    );
-
-
-    Register_sync_rw_inc #(
-        .W(8)
-    ) OUTR_reg (
-        .clk(clk),
-        .reset(0),
-        .write(OUTR_write),
-        .increment(0),
-        .DATA(common_bus),
-        .A(OUTR)
-    );
+  Register_sync_rw_inc #(
+	  .W(8)
+  ) INPR_reg (
+	  .clk(clk),
+	  .reset(0),
+	  .write(0),
+	  .increment(0),
+	  .DATA(),
+	  .A(INPR)
+  );
 
 
 
