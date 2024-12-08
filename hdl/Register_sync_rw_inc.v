@@ -8,6 +8,10 @@ module Register_sync_rw_inc #(
     input [W-1:0] DATA,
     output reg [W-1:0] A
 );
+initial begin
+    A = 0;
+
+end
 
   always @(posedge clk) begin
     case (reset)

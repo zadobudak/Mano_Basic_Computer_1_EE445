@@ -1,9 +1,12 @@
 // Datapath module
 
-module datapath #(
-) (
+module Datapath(
     input clk,
-    input [2:0] sel,
+    input [2:0] BUS_SEL,
+
+    input [2:0] ALU_SEL,
+
+    input MEM_write,
 
     input AR_write,
     input AR_increment,
@@ -28,17 +31,19 @@ module datapath #(
     input TR_clear,
 
     input OUTR_write,
-    output reg [15:0] data_out
+    output reg [15:0] data_out,
+
+    output [11:0] PC,
+    output [11:0] AR,
+    output [15:0] IR,
+    output [15:0] AC,
+    output [15:0] DR ,
+    output E ,
+    output IEN
 );
 
 
-
-  wire [15:0] common_bus;
-  wire [11:0] AR;
-  wire [11:0] PC;
-  wire [15:0] DR;
-  wire [15:0] AC;
-  wire [15:0] IR;
+  wire [15:0] MEM;
   wire [15:0] TR;
   wire [7:0] OUTR;
   wire [7:0] INPR;
@@ -46,11 +51,19 @@ module datapath #(
 
 
   wire ALU_CO;
-  wire E;
-  wire IEN;
 
 
-  //   TODO : connect needed signals 
+  // Memory module instantiation
+  Memory MEM_module (
+      .clk(clk),
+      .write(MEM_write),
+      .address(AR),
+      .data_in(data_out),
+      .data_out(MEM)
+  );
+
+
+  //   TODO : connect needed signals
 
   // ALU module instantiation
   ALU #(
@@ -59,7 +72,7 @@ module datapath #(
       .AC (AC),
       .DR (DR),
       .E  (E),
-      .SEL(sel),
+      .SEL(ALU_SEL),
       .RES(ALU_RES),
       .CO (ALU_CO),
       .OVF(),
@@ -78,17 +91,17 @@ module datapath #(
       .DATA(ALU_CO),
       .A(E)
   );
-  
-  // IEN register 
+
+  // IEN register
   Register_sync_rw_inc #(
-	  .W(1)
+      .W(1)
   ) IEN_reg (
-	  .clk(clk),
-	  .reset(0),
-	  .write(0),
-	  .increment(0),
-	  .DATA(),
-	  .A(IEN)
+      .clk(clk),
+      .reset(0),
+      .write(0),
+      .increment(0),
+      .DATA(),
+      .A(IEN)
   );
 
   // Address Register instantiation
@@ -99,7 +112,7 @@ module datapath #(
       .reset(AR_clear),
       .write(AR_write),
       .increment(AR_increment),
-      .DATA(common_bus[11:0]),
+      .DATA(data_out[11:0]),
       .A(AR)
   );
 
@@ -112,7 +125,7 @@ module datapath #(
       .reset(PC_clear),
       .write(PC_write),
       .increment(PC_increment),
-      .DATA(common_bus[11:0]),
+      .DATA(data_out[11:0]),
       .A(PC)
   );
 
@@ -124,7 +137,7 @@ module datapath #(
       .reset(DR_clear),
       .write(DR_write),
       .increment(DR_increment),
-      .DATA(common_bus),
+      .DATA(data_out),
       .A(DR)
   );
 
@@ -146,7 +159,7 @@ module datapath #(
       .reset(0),
       .write(IR_write),
       .increment(0),
-      .DATA(common_bus),
+      .DATA(data_out),
       .A(IR)
   );
 
@@ -157,7 +170,7 @@ module datapath #(
       .reset(TR_clear),
       .write(TR_write),
       .increment(TR_increment),
-      .DATA(common_bus),
+      .DATA(data_out),
       .A(TR)
   );
 
@@ -167,21 +180,40 @@ module datapath #(
   ) OUTR_reg (
       .clk(clk),
       .reset(0),
-      .write(0),
+      .write(OUTR_write),
       .increment(0),
       .DATA(),
       .A(OUTR)
   );
-  
+
   Register_sync_rw_inc #(
-	  .W(8)
+      .W(8)
   ) INPR_reg (
-	  .clk(clk),
-	  .reset(0),
-	  .write(0),
-	  .increment(0),
-	  .DATA(),
-	  .A(INPR)
+      .clk(clk),
+      .reset(0),
+      .write(0),
+      .increment(0),
+      .DATA(),
+      .A(INPR)
+  );
+
+
+
+
+
+  Mux_8_1 #(
+      .W(16)
+  ) BUS_mux (
+      .in0(16'b0),
+      .in1({4'b0000, AR}),
+      .in2({4'b0000, PC}),
+      .in3(DR),
+      .in4(AC),
+      .in5(IR),
+      .in6(TR),
+      .in7(MEM),
+      .sel(BUS_SEL),
+      .out(data_out)
   );
 
 

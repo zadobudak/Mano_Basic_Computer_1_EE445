@@ -8,6 +8,9 @@ module SC #(
 
     output reg [W-1:0] count
 );
+initial begin
+    count = 0;
+end
 
 
   always @(posedge clk) begin

@@ -19,70 +19,27 @@ module ALU #(
   localparam SHIFT_RIGHT = 3'b100;
   localparam SHIFT_LEFT = 3'b101;
 
-
-
-
+  reg [W:0] temp;
   // case statement to select the operation
   always @(*) begin
     case (SEL)
 
-      ADD: begin
-        // Add the two inputs Then put them in {CO, RES}
-        {CO, RES} = AC + DR;
-        // since we are using 2's complement, we need to check for overflow
-        // if the sign of the two inputs is the same and the sign of the result is different
-        // then we have an overflow
-        OVF = (AC[W-1] == DR[W-1]) && (AC[W-1] != RES[W-1]);
-
-      end
-      AND: begin
-        RES = AC & DR;
-        CO = 0;
-        OVF = 0;
-      end
-      TRANSFER: begin
-        RES = DR;
-        CO = 0;
-        OVF = 0;
-      end
-      COMPLEMENT: begin
-        RES = ~DR;
-        CO = 0;
-        OVF = 0;
-      end
-      SHIFT_RIGHT: begin
-        RES = AC >> 1;
-        RES[W-1] = E;
-        CO = 0;
-        OVF = 0;
-      end
-      SHIFT_LEFT: begin
-        RES = AC << 1;
-        RES[0] = E;
-        CO = 0;
-        OVF = 0;
-      end
-    // Not sure if they are needed default case is added
-    //   3'b110: begin
-    //     RES = AC;
-    //     CO = 0;
-    //   end
-    //   3'b111: begin
-    //     RES = AC;
-    //     CO = 0;
-    //   end
-      default: begin
-        RES = AC;
-        CO = 0;
-        OVF = 0;
-      end
+      ADD: temp = AC + DR;
+      AND: temp[W-1:0] = AC & DR;
+      TRANSFER: temp[W-1:0] = DR;
+      COMPLEMENT: temp[W-1:0] = ~AC;
+      SHIFT_RIGHT: temp[W-1:0] = {E, AC[W-1:1]};
+      SHIFT_LEFT: temp[W-1:0] = {AC[W-1:1], E};
+      default: temp = 17'b0;
     endcase
 
     // Set the flags
   end
-  
-assign Z = (RES == 0);
-assign N = (RES[W-1] == 1);
+  assign CO  = (SEL == ADD) & temp[W];  // carry out if ADD operation and temp[W] is 1 else 0
+  assign OVF = (SEL == ADD) & (AC[W-1] == DR[W-1]) && (AC[W-1] != RES[W-1]);
+  assign Z   = (RES == 0);
+  assign N   = (RES[W-1] == 1);
+  assign RES = temp[W-1:0];
 
 
 

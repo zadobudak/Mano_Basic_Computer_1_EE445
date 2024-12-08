@@ -6,8 +6,9 @@ SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 
 #Add your sources one by one as below or use *.v to add all verilog files
-VERILOG_SOURCES += $(SOURCES)/BC_I.v
-VERILOG_SOURCES += $(SOURCES)/ALU.v
+VERILOG_SOURCES += $(wildcard $(SOURCES)/*.v)
+# VERILOG_SOURCES += $(SOURCES)/ALU.v
+
 # add sources ending in .v with wildcard * 
 
 
