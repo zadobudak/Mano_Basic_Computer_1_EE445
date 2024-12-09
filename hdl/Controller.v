@@ -66,9 +66,9 @@ module Controller (
   wire R;
   wire S_NOT;
   assign S = ~S_NOT;
+  wire S_clear;
 
 
-  //module declerations 
 
   // Sequence Counter
 
@@ -106,7 +106,7 @@ module Controller (
   );
 
   DFF R_DFF (
-      .D(1),
+      .D(1'b1),
       .clock(clk),
       .clear(R_clear),
       .enable(R_set),
@@ -114,9 +114,9 @@ module Controller (
   );
 
   DFF S_NOT_DFF (
-      .D(1),
+      .D(1'b1),
       .clock(clk),
-      .clear(0),
+      .clear(1'b0),
       .enable(S_clear),
       .Q(S_NOT)
   );
@@ -238,77 +238,77 @@ module Controller (
 
   // Logging for debugging purposes 
 
-  //   always @(posedge clk) begin
+  // always @(posedge clk) begin
 
 
-  //     // Display the microinstructions as DxTx 
-  //     $display("D:%d", IR[14:12]);
-  //     $display("T:%d", SC_count);
+  //   // Display the microinstructions as DxTx 
+  //   $display("D:%d", IR[14:12]);
+  //   $display("T:%d", SC_count);
 
 
 
 
-  //     // display ALU select and BUS select with their values and operations
-  //     $display("ALU_SEL: %b", ALU_SEL);
-  //     // display What ALU_SEL is doing
-  //     case (ALU_SEL)
-  //       ALU_ADD: $display("ALU_ADD");
-  //       ALU_AND: $display("ALU_AND");
-  //       ALU_TRANSFER: $display("ALU_TRANSFER");
-  //       ALU_COMPLEMENT: $display("ALU_COMPLEMENT");
-  //       ALU_SHIFT_RIGHT: $display("ALU_SHIFT_RIGHT");
-  //       ALU_SHIFT_LEFT: $display("ALU_SHIFT_LEFT");
-  //       default: $display("ALU default");
-  //     endcase
+  //   // display ALU select and BUS select with their values and operations
+  //   $display("ALU_SEL: %b", ALU_SEL);
+  //   // display What ALU_SEL is doing
+  //   case (ALU_SEL)
+  //     ALU_ADD: $display("ALU_ADD");
+  //     ALU_AND: $display("ALU_AND");
+  //     ALU_TRANSFER: $display("ALU_TRANSFER");
+  //     ALU_COMPLEMENT: $display("ALU_COMPLEMENT");
+  //     ALU_SHIFT_RIGHT: $display("ALU_SHIFT_RIGHT");
+  //     ALU_SHIFT_LEFT: $display("ALU_SHIFT_LEFT");
+  //     default: $display("ALU default");
+  //   endcase
 
-  //     $display("BUS_SEL: %b", BUS_SEL);
-  //     // display What BUS_SEL is doing
+  //   $display("BUS_SEL: %b", BUS_SEL);
+  //   // display What BUS_SEL is doing
 
-  //     case (BUS_SEL)
-  //       3'b000:  $display("BUS_SEL: empty");
-  //       3'b001:  $display("BUS_SEL: AR");
-  //       3'b010:  $display("BUS_SEL: PC");
-  //       3'b011:  $display("BUS_SEL: DR");
-  //       3'b100:  $display("BUS_SEL: AC");
-  //       3'b101:  $display("BUS_SEL: IR");
-  //       3'b110:  $display("BUS_SEL: TR");
-  //       3'b111:  $display("BUS_SEL: MEM");
-  //       default: $display("BUS_SEL: default");
-  //     endcase
+  //   case (BUS_SEL)
+  //     3'b000:  $display("BUS_SEL: empty");
+  //     3'b001:  $display("BUS_SEL: AR");
+  //     3'b010:  $display("BUS_SEL: PC");
+  //     3'b011:  $display("BUS_SEL: DR");
+  //     3'b100:  $display("BUS_SEL: AC");
+  //     3'b101:  $display("BUS_SEL: IR");
+  //     3'b110:  $display("BUS_SEL: TR");
+  //     3'b111:  $display("BUS_SEL: MEM");
+  //     default: $display("BUS_SEL: default");
+  //   endcase
 
-  //     $display("MEM_write: %b", MEM_write);
-  //     $display("AR_write: %b", AR_write);
-  //     $display("AR_increment: %b", AR_increment);
-  //     $display("AR_clear: %b", AR_clear);
-  //     $display("PC_write: %b", PC_write);
-  //     $display("PC_increment: %b", PC_increment);
-  //     $display("PC_clear: %b", PC_clear);
-  //     $display("DR_write: %b", DR_write);
-  //     $display("DR_increment: %b", DR_increment);
-  //     $display("DR_clear: %b", DR_clear);
-  //     $display("AC_write: %b", AC_write);
-  //     $display("AC_increment: %b", AC_increment);
-  //     $display("AC_clear: %b", AC_clear);
-  //     $display("IR_write: %b", IR_write);
-  //     $display("TR_write: %b", TR_write);
-  //     $display("TR_increment: %b", TR_increment);
-  //     $display("TR_clear: %b", TR_clear);
-  //     $display("OUTR_write: %b", OUTR_write);
-  //     $display("IEN_set: %b", IEN_set);
-  //     $display("IEN_clear: %b", IEN_clear);
-  //     $display("IR: %h", IR);
-  //     $display("databus: %h", databus);
-  //     $display("E: %b", E);
-  //     $display("IEN: %b", IEN);
-  //     $display("FGI: %b", FGI);
-  //     $display("FGO: %b", FGO);
-  //     $display("SC_clear: %b", SC_clear);
-  //     $display("SC_increment: %b", SC_increment);
-  //     $display("R: %b", R);
-  //     $display("I: %b", I);
-  //     $display("S: %b", S);
+  //   $display("MEM_write: %b", MEM_write);
+  //   $display("AR_write: %b", AR_write);
+  //   $display("AR_increment: %b", AR_increment);
+  //   $display("AR_clear: %b", AR_clear);
+  //   $display("PC_write: %b", PC_write);
+  //   $display("PC_increment: %b", PC_increment);
+  //   $display("PC_clear: %b", PC_clear);
+  //   $display("DR_write: %b", DR_write);
+  //   $display("DR_increment: %b", DR_increment);
+  //   $display("DR_clear: %b", DR_clear);
+  //   $display("AC_write: %b", AC_write);
+  //   $display("AC_increment: %b", AC_increment);
+  //   $display("AC_clear: %b", AC_clear);
+  //   $display("IR_write: %b", IR_write);
+  //   $display("TR_write: %b", TR_write);
+  //   $display("TR_increment: %b", TR_increment);
+  //   $display("TR_clear: %b", TR_clear);
+  //   $display("OUTR_write: %b", OUTR_write);
+  //   $display("IEN_set: %b", IEN_set);
+  //   $display("IEN_clear: %b", IEN_clear);
+  //   $display("IR: %h", IR);
+  //   $display("databus: %h", databus);
+  //   $display("E: %b", E);
+  //   $display("IEN: %b", IEN);
+  //   $display("FGI: %b", FGI);
+  //   $display("FGO: %b", FGO);
+  //   $display("SC_clear: %b", SC_clear);
+  //   $display("SC_increment: %b", SC_increment);
+  //   $display("R: %b", R);
+  //   $display("I: %b", I);
+  //   $display("S: %b", S);
 
 
-  //   end
+  // end
 
 endmodule

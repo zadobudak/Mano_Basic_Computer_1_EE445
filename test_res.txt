@@ -1,0 +1,1235 @@
+rm -f results.xml
+"make" -f Makefile results.xml
+make[1]: Entering directory '/home/zado/Projects/School/EE445/HDL HW/tests'
+rm -f results.xml
+MODULE=cocotb_bc1_test TESTCASE= TOPLEVEL=BC_I TOPLEVEL_LANG=verilog \
+         /usr/bin/vvp -M /home/zado/.conda/envs/verilog/lib/python3.12/site-packages/cocotb/libs -m libcocotbvpi_icarus   sim_build/sim.vvp  
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Running tests with cocotb v1.9.2 from /home/zado/.conda/envs/verilog/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Seeding Python random module with 1733765110
+     0.00ns INFO     cocotb.regression                  Found test cocotb_bc1_test.basic_computer_test
+     0.00ns INFO     cocotb.regression                  running basic_computer_test (1/1)
+                                                          Try accessing the design.
+     0.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+     0.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000000000	 0x0
+                                                            AR: 000000000000	 0x0
+                                                            IR: 0000000000000000	 0x0
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+     0.00ns INFO     cocotb.BC_I                        Cycle count: 0 
+                                                        
+ 10000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+ 10000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000000000	 0x0
+                                                            AR: 000000000000	 0x0
+                                                            IR: 0000000000000000	 0x0
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+ 10000.00ns INFO     cocotb.BC_I                        Cycle count: 1 
+                                                        
+ 20000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+ 20000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000000001	 0x1
+                                                            AR: 000000000000	 0x0
+                                                            IR: 0100000000001001	 0x4009
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+ 20000.00ns INFO     cocotb.BC_I                        Cycle count: 2 
+                                                        
+ 30000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+ 30000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000000001	 0x1
+                                                            AR: 000000001001	 0x9
+                                                            IR: 0100000000001001	 0x4009
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+ 30000.00ns INFO     cocotb.BC_I                        Cycle count: 3 
+                                                        
+ 40000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+ 40000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000000001	 0x1
+                                                            AR: 000000001001	 0x9
+                                                            IR: 0100000000001001	 0x4009
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+ 40000.00ns INFO     cocotb.BC_I                        Cycle count: 4 
+                                                        
+ 50000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+ 50000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001001	 0x9
+                                                            AR: 000000001001	 0x9
+                                                            IR: 0100000000001001	 0x4009
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+ 50000.00ns INFO     cocotb.BC_I                        Cycle count: 5 
+                                                        
+ 60000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+ 60000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001001	 0x9
+                                                            AR: 000000001001	 0x9
+                                                            IR: 0100000000001001	 0x4009
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+ 60000.00ns INFO     cocotb.BC_I                        Cycle count: 6 
+                                                        
+ 70000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+ 70000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001010	 0xa
+                                                            AR: 000000001001	 0x9
+                                                            IR: 1111000010000000	 0xf080
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+ 70000.00ns INFO     cocotb.BC_I                        Cycle count: 7 
+                                                        
+ 80000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+ 80000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001010	 0xa
+                                                            AR: 000010000000	 0x80
+                                                            IR: 1111000010000000	 0xf080
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+ 80000.00ns INFO     cocotb.BC_I                        Cycle count: 8 
+                                                        
+ 90000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+ 90000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001010	 0xa
+                                                            AR: 000010000000	 0x80
+                                                            IR: 1111000010000000	 0xf080
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+ 90000.00ns INFO     cocotb.BC_I                        Cycle count: 9 
+                                                        
+100000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+100000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001010	 0xa
+                                                            AR: 000000001010	 0xa
+                                                            IR: 1111000010000000	 0xf080
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+100000.00ns INFO     cocotb.BC_I                        Cycle count: 10 
+                                                        
+110000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+110000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001011	 0xb
+                                                            AR: 000000001010	 0xa
+                                                            IR: 1010000000000011	 0xa003
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+110000.00ns INFO     cocotb.BC_I                        Cycle count: 11 
+                                                        
+120000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+120000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001011	 0xb
+                                                            AR: 000000000011	 0x3
+                                                            IR: 1010000000000011	 0xa003
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+120000.00ns INFO     cocotb.BC_I                        Cycle count: 12 
+                                                        
+130000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+130000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001011	 0xb
+                                                            AR: 000000000010	 0x2
+                                                            IR: 1010000000000011	 0xa003
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000000000	 0x0
+                                                         
+130000.00ns INFO     cocotb.BC_I                        Cycle count: 13 
+                                                        
+140000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+140000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001011	 0xb
+                                                            AR: 000000000010	 0x2
+                                                            IR: 1010000000000011	 0xa003
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000000000	 0x0
+                                                         
+140000.00ns INFO     cocotb.BC_I                        Cycle count: 14 
+                                                        
+150000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+150000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001011	 0xb
+                                                            AR: 000000000010	 0x2
+                                                            IR: 1010000000000011	 0xa003
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000000000	 0x0
+                                                         
+150000.00ns INFO     cocotb.BC_I                        Cycle count: 15 
+                                                        
+160000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+160000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001011	 0xb
+                                                            AR: 000000000000	 0x0
+                                                            IR: 1010000000000011	 0xa003
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+160000.00ns INFO     cocotb.BC_I                        Cycle count: 16 
+                                                        
+170000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+170000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000000000	 0x0
+                                                            AR: 000000000000	 0x0
+                                                            IR: 1010000000000011	 0xa003
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+170000.00ns INFO     cocotb.BC_I                        Cycle count: 17 
+                                                        
+180000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+180000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000000001	 0x1
+                                                            AR: 000000000000	 0x0
+                                                            IR: 1010000000000011	 0xa003
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+180000.00ns INFO     cocotb.BC_I                        Cycle count: 18 
+                                                        
+190000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+190000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000000001	 0x1
+                                                            AR: 000000000001	 0x1
+                                                            IR: 1010000000000011	 0xa003
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+190000.00ns INFO     cocotb.BC_I                        Cycle count: 19 
+                                                        
+200000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+200000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000000010	 0x2
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0100000000100000	 0x4020
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+200000.00ns INFO     cocotb.BC_I                        Cycle count: 20 
+                                                        
+210000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+210000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000000010	 0x2
+                                                            AR: 000000100000	 0x20
+                                                            IR: 0100000000100000	 0x4020
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+210000.00ns INFO     cocotb.BC_I                        Cycle count: 21 
+                                                        
+220000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+220000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000000010	 0x2
+                                                            AR: 000000100000	 0x20
+                                                            IR: 0100000000100000	 0x4020
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+220000.00ns INFO     cocotb.BC_I                        Cycle count: 22 
+                                                        
+230000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+230000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000100000	 0x20
+                                                            AR: 000000100000	 0x20
+                                                            IR: 0100000000100000	 0x4020
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+230000.00ns INFO     cocotb.BC_I                        Cycle count: 23 
+                                                        
+240000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+240000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000100000	 0x20
+                                                            AR: 000000100000	 0x20
+                                                            IR: 0100000000100000	 0x4020
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+240000.00ns INFO     cocotb.BC_I                        Cycle count: 24 
+                                                        
+250000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+250000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000100001	 0x21
+                                                            AR: 000000100000	 0x20
+                                                            IR: 1100000000000000	 0xc000
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+250000.00ns INFO     cocotb.BC_I                        Cycle count: 25 
+                                                        
+260000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+260000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000100001	 0x21
+                                                            AR: 000000000000	 0x0
+                                                            IR: 1100000000000000	 0xc000
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+260000.00ns INFO     cocotb.BC_I                        Cycle count: 26 
+                                                        
+270000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+270000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000100001	 0x21
+                                                            AR: 000000001011	 0xb
+                                                            IR: 1100000000000000	 0xc000
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+270000.00ns INFO     cocotb.BC_I                        Cycle count: 27 
+                                                        
+280000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+280000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001011	 0xb
+                                                            AR: 000000001011	 0xb
+                                                            IR: 1100000000000000	 0xc000
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+280000.00ns INFO     cocotb.BC_I                        Cycle count: 28 
+                                                        
+290000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+290000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001011	 0xb
+                                                            AR: 000000001011	 0xb
+                                                            IR: 1100000000000000	 0xc000
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+290000.00ns INFO     cocotb.BC_I                        Cycle count: 29 
+                                                        
+300000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+300000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001100	 0xc
+                                                            AR: 000000001011	 0xb
+                                                            IR: 0111001000000000	 0x7200
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+300000.00ns INFO     cocotb.BC_I                        Cycle count: 30 
+                                                        
+310000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+310000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001100	 0xc
+                                                            AR: 001000000000	 0x200
+                                                            IR: 0111001000000000	 0x7200
+                                                            AC: 1010101010101010	 0xaaaa
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+310000.00ns INFO     cocotb.BC_I                        Cycle count: 31 
+                                                        
+320000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+320000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001100	 0xc
+                                                            AR: 001000000000	 0x200
+                                                            IR: 0111001000000000	 0x7200
+                                                            AC: 0101010101010101	 0x5555
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+320000.00ns INFO     cocotb.BC_I                        Cycle count: 32 
+                                                        
+330000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+330000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001100	 0xc
+                                                            AR: 000000001100	 0xc
+                                                            IR: 0111001000000000	 0x7200
+                                                            AC: 0101010101010101	 0x5555
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+330000.00ns INFO     cocotb.BC_I                        Cycle count: 33 
+                                                        
+340000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+340000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001101	 0xd
+                                                            AR: 000000001100	 0xc
+                                                            IR: 0111000100000000	 0x7100
+                                                            AC: 0101010101010101	 0x5555
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+340000.00ns INFO     cocotb.BC_I                        Cycle count: 34 
+                                                        
+350000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+350000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001101	 0xd
+                                                            AR: 000100000000	 0x100
+                                                            IR: 0111000100000000	 0x7100
+                                                            AC: 0101010101010101	 0x5555
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+350000.00ns INFO     cocotb.BC_I                        Cycle count: 35 
+                                                        
+360000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+360000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001101	 0xd
+                                                            AR: 000100000000	 0x100
+                                                            IR: 0111000100000000	 0x7100
+                                                            AC: 0101010101010101	 0x5555
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+360000.00ns INFO     cocotb.BC_I                        Cycle count: 36 
+                                                        
+370000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+370000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001101	 0xd
+                                                            AR: 000000001101	 0xd
+                                                            IR: 0111000100000000	 0x7100
+                                                            AC: 0101010101010101	 0x5555
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+370000.00ns INFO     cocotb.BC_I                        Cycle count: 37 
+                                                        
+380000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+380000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001110	 0xe
+                                                            AR: 000000001101	 0xd
+                                                            IR: 0001000000000011	 0x1003
+                                                            AC: 0101010101010101	 0x5555
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+380000.00ns INFO     cocotb.BC_I                        Cycle count: 38 
+                                                        
+390000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+390000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001110	 0xe
+                                                            AR: 000000000011	 0x3
+                                                            IR: 0001000000000011	 0x1003
+                                                            AC: 0101010101010101	 0x5555
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+390000.00ns INFO     cocotb.BC_I                        Cycle count: 39 
+                                                        
+400000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+400000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001110	 0xe
+                                                            AR: 000000000011	 0x3
+                                                            IR: 0001000000000011	 0x1003
+                                                            AC: 0101010101010101	 0x5555
+                                                            DR: 1010101010101010	 0xaaaa
+                                                             TR: 0000000000001011	 0xb
+                                                         
+400000.00ns INFO     cocotb.BC_I                        Cycle count: 40 
+                                                        
+410000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+410000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001110	 0xe
+                                                            AR: 000000000011	 0x3
+                                                            IR: 0001000000000011	 0x1003
+                                                            AC: 0101010101010101	 0x5555
+                                                            DR: 0000000000000010	 0x2
+                                                             TR: 0000000000001011	 0xb
+                                                         
+410000.00ns INFO     cocotb.BC_I                        Cycle count: 41 
+                                                        
+420000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+420000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001110	 0xe
+                                                            AR: 000000000011	 0x3
+                                                            IR: 0001000000000011	 0x1003
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000010	 0x2
+                                                             TR: 0000000000001011	 0xb
+                                                         
+420000.00ns INFO     cocotb.BC_I                        Cycle count: 42 
+                                                        
+430000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+430000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001110	 0xe
+                                                            AR: 000000001110	 0xe
+                                                            IR: 0001000000000011	 0x1003
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000010	 0x2
+                                                             TR: 0000000000001011	 0xb
+                                                         
+430000.00ns INFO     cocotb.BC_I                        Cycle count: 43 
+                                                        
+440000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+440000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001111	 0xf
+                                                            AR: 000000001110	 0xe
+                                                            IR: 0110000000001000	 0x6008
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000010	 0x2
+                                                             TR: 0000000000001011	 0xb
+                                                         
+440000.00ns INFO     cocotb.BC_I                        Cycle count: 44 
+                                                        
+450000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+450000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001111	 0xf
+                                                            AR: 000000001000	 0x8
+                                                            IR: 0110000000001000	 0x6008
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000010	 0x2
+                                                             TR: 0000000000001011	 0xb
+                                                         
+450000.00ns INFO     cocotb.BC_I                        Cycle count: 45 
+                                                        
+460000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+460000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001111	 0xf
+                                                            AR: 000000001000	 0x8
+                                                            IR: 0110000000001000	 0x6008
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000010	 0x2
+                                                             TR: 0000000000001011	 0xb
+                                                         
+460000.00ns INFO     cocotb.BC_I                        Cycle count: 46 
+                                                        
+470000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+470000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001111	 0xf
+                                                            AR: 000000001000	 0x8
+                                                            IR: 0110000000001000	 0x6008
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 1111111111111111	 0xffff
+                                                             TR: 0000000000001011	 0xb
+                                                         
+470000.00ns INFO     cocotb.BC_I                        Cycle count: 47 
+                                                        
+480000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+480000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000001111	 0xf
+                                                            AR: 000000001000	 0x8
+                                                            IR: 0110000000001000	 0x6008
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+480000.00ns INFO     cocotb.BC_I                        Cycle count: 48 
+                                                        
+490000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+490000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010000	 0x10
+                                                            AR: 000000001000	 0x8
+                                                            IR: 0110000000001000	 0x6008
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+490000.00ns INFO     cocotb.BC_I                        Cycle count: 49 
+                                                        
+500000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+500000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010000	 0x10
+                                                            AR: 000000010000	 0x10
+                                                            IR: 0110000000001000	 0x6008
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+500000.00ns INFO     cocotb.BC_I                        Cycle count: 50 
+                                                        
+510000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+510000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010001	 0x11
+                                                            AR: 000000010000	 0x10
+                                                            IR: 1111000001000000	 0xf040
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+510000.00ns INFO     cocotb.BC_I                        Cycle count: 51 
+                                                        
+520000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+520000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010001	 0x11
+                                                            AR: 000001000000	 0x40
+                                                            IR: 1111000001000000	 0xf040
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+520000.00ns INFO     cocotb.BC_I                        Cycle count: 52 
+                                                        
+530000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+530000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010001	 0x11
+                                                            AR: 000001000000	 0x40
+                                                            IR: 1111000001000000	 0xf040
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+530000.00ns INFO     cocotb.BC_I                        Cycle count: 53 
+                                                        
+540000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+540000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010001	 0x11
+                                                            AR: 000000010001	 0x11
+                                                            IR: 1111000001000000	 0xf040
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+540000.00ns INFO     cocotb.BC_I                        Cycle count: 54 
+                                                        
+550000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+550000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010010	 0x12
+                                                            AR: 000000010001	 0x11
+                                                            IR: 0111000010000000	 0x7080
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+550000.00ns INFO     cocotb.BC_I                        Cycle count: 55 
+                                                        
+560000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+560000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010010	 0x12
+                                                            AR: 000010000000	 0x80
+                                                            IR: 0111000010000000	 0x7080
+                                                            AC: 0101010101010111	 0x5557
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+560000.00ns INFO     cocotb.BC_I                        Cycle count: 56 
+                                                        
+570000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+570000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010010	 0x12
+                                                            AR: 000010000000	 0x80
+                                                            IR: 0111000010000000	 0x7080
+                                                            AC: 0010101010101011	 0x2aab
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+570000.00ns INFO     cocotb.BC_I                        Cycle count: 57 
+                                                        
+580000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+580000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010010	 0x12
+                                                            AR: 000000010010	 0x12
+                                                            IR: 0111000010000000	 0x7080
+                                                            AC: 0010101010101011	 0x2aab
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+580000.00ns INFO     cocotb.BC_I                        Cycle count: 58 
+                                                        
+590000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+590000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010011	 0x13
+                                                            AR: 000000010010	 0x12
+                                                            IR: 0111000001000000	 0x7040
+                                                            AC: 0010101010101011	 0x2aab
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+590000.00ns INFO     cocotb.BC_I                        Cycle count: 59 
+                                                        
+600000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+600000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010011	 0x13
+                                                            AR: 000001000000	 0x40
+                                                            IR: 0111000001000000	 0x7040
+                                                            AC: 0010101010101011	 0x2aab
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+600000.00ns INFO     cocotb.BC_I                        Cycle count: 60 
+                                                        
+610000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+610000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010011	 0x13
+                                                            AR: 000001000000	 0x40
+                                                            IR: 0111000001000000	 0x7040
+                                                            AC: 0101010101010110	 0x5556
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+610000.00ns INFO     cocotb.BC_I                        Cycle count: 61 
+                                                        
+620000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+620000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010011	 0x13
+                                                            AR: 000000010011	 0x13
+                                                            IR: 0111000001000000	 0x7040
+                                                            AC: 0101010101010110	 0x5556
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+620000.00ns INFO     cocotb.BC_I                        Cycle count: 62 
+                                                        
+630000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+630000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010100	 0x14
+                                                            AR: 000000010011	 0x13
+                                                            IR: 0111100000000000	 0x7800
+                                                            AC: 0101010101010110	 0x5556
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+630000.00ns INFO     cocotb.BC_I                        Cycle count: 63 
+                                                        
+640000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+640000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010100	 0x14
+                                                            AR: 100000000000	 0x800
+                                                            IR: 0111100000000000	 0x7800
+                                                            AC: 0101010101010110	 0x5556
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+640000.00ns INFO     cocotb.BC_I                        Cycle count: 64 
+                                                        
+650000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+650000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010100	 0x14
+                                                            AR: 100000000000	 0x800
+                                                            IR: 0111100000000000	 0x7800
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+650000.00ns INFO     cocotb.BC_I                        Cycle count: 65 
+                                                        
+660000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+660000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010100	 0x14
+                                                            AR: 000000010100	 0x14
+                                                            IR: 0111100000000000	 0x7800
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+660000.00ns INFO     cocotb.BC_I                        Cycle count: 66 
+                                                        
+670000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+670000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010101	 0x15
+                                                            AR: 000000010100	 0x14
+                                                            IR: 0111010000000000	 0x7400
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+670000.00ns INFO     cocotb.BC_I                        Cycle count: 67 
+                                                        
+680000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+680000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010101	 0x15
+                                                            AR: 010000000000	 0x400
+                                                            IR: 0111010000000000	 0x7400
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+680000.00ns INFO     cocotb.BC_I                        Cycle count: 68 
+                                                        
+690000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+690000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010101	 0x15
+                                                            AR: 010000000000	 0x400
+                                                            IR: 0111010000000000	 0x7400
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+690000.00ns INFO     cocotb.BC_I                        Cycle count: 69 
+                                                        
+700000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+700000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010101	 0x15
+                                                            AR: 000000010101	 0x15
+                                                            IR: 0111010000000000	 0x7400
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+700000.00ns INFO     cocotb.BC_I                        Cycle count: 70 
+                                                        
+710000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+710000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010110	 0x16
+                                                            AR: 000000010101	 0x15
+                                                            IR: 0111000000100000	 0x7020
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+710000.00ns INFO     cocotb.BC_I                        Cycle count: 71 
+                                                        
+720000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+720000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010110	 0x16
+                                                            AR: 000000100000	 0x20
+                                                            IR: 0111000000100000	 0x7020
+                                                            AC: 0000000000000000	 0x0
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+720000.00ns INFO     cocotb.BC_I                        Cycle count: 72 
+                                                        
+730000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+730000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010110	 0x16
+                                                            AR: 000000100000	 0x20
+                                                            IR: 0111000000100000	 0x7020
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+730000.00ns INFO     cocotb.BC_I                        Cycle count: 73 
+                                                        
+740000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+740000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010110	 0x16
+                                                            AR: 000000010110	 0x16
+                                                            IR: 0111000000100000	 0x7020
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+740000.00ns INFO     cocotb.BC_I                        Cycle count: 74 
+                                                        
+750000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+750000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010111	 0x17
+                                                            AR: 000000010110	 0x16
+                                                            IR: 0111000000010000	 0x7010
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+750000.00ns INFO     cocotb.BC_I                        Cycle count: 75 
+                                                        
+760000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+760000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000010111	 0x17
+                                                            AR: 000000010000	 0x10
+                                                            IR: 0111000000010000	 0x7010
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+760000.00ns INFO     cocotb.BC_I                        Cycle count: 76 
+                                                        
+770000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+770000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011000	 0x18
+                                                            AR: 000000010000	 0x10
+                                                            IR: 0111000000010000	 0x7010
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+770000.00ns INFO     cocotb.BC_I                        Cycle count: 77 
+                                                        
+780000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+780000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011000	 0x18
+                                                            AR: 000000011000	 0x18
+                                                            IR: 0111000000010000	 0x7010
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+780000.00ns INFO     cocotb.BC_I                        Cycle count: 78 
+                                                        
+790000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+790000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011001	 0x19
+                                                            AR: 000000011000	 0x18
+                                                            IR: 0111000000000100	 0x7004
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+790000.00ns INFO     cocotb.BC_I                        Cycle count: 79 
+                                                        
+800000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+800000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011001	 0x19
+                                                            AR: 000000000100	 0x4
+                                                            IR: 0111000000000100	 0x7004
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+800000.00ns INFO     cocotb.BC_I                        Cycle count: 80 
+                                                        
+810000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+810000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011010	 0x1a
+                                                            AR: 000000000100	 0x4
+                                                            IR: 0111000000000100	 0x7004
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+810000.00ns INFO     cocotb.BC_I                        Cycle count: 81 
+                                                        
+820000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+820000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011010	 0x1a
+                                                            AR: 000000011010	 0x1a
+                                                            IR: 0111000000000100	 0x7004
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+820000.00ns INFO     cocotb.BC_I                        Cycle count: 82 
+                                                        
+830000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+830000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000011010	 0x1a
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+830000.00ns INFO     cocotb.BC_I                        Cycle count: 83 
+                                                        
+840000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+840000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+840000.00ns INFO     cocotb.BC_I                        Cycle count: 84 
+                                                        
+850000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+850000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+850000.00ns INFO     cocotb.BC_I                        Cycle count: 85 
+                                                        
+860000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+860000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+860000.00ns INFO     cocotb.BC_I                        Cycle count: 86 
+                                                        
+870000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+870000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+870000.00ns INFO     cocotb.BC_I                        Cycle count: 87 
+                                                        
+880000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+880000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+880000.00ns INFO     cocotb.BC_I                        Cycle count: 88 
+                                                        
+890000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+890000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+890000.00ns INFO     cocotb.BC_I                        Cycle count: 89 
+                                                        
+900000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+900000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+900000.00ns INFO     cocotb.BC_I                        Cycle count: 90 
+                                                        
+910000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+910000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+910000.00ns INFO     cocotb.BC_I                        Cycle count: 91 
+                                                        
+920000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+920000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+920000.00ns INFO     cocotb.BC_I                        Cycle count: 92 
+                                                        
+930000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+930000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+930000.00ns INFO     cocotb.BC_I                        Cycle count: 93 
+                                                        
+940000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+940000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+940000.00ns INFO     cocotb.BC_I                        Cycle count: 94 
+                                                        
+950000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+950000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+950000.00ns INFO     cocotb.BC_I                        Cycle count: 95 
+                                                        
+960000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+960000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+960000.00ns INFO     cocotb.BC_I                        Cycle count: 96 
+                                                        
+970000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+970000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+970000.00ns INFO     cocotb.BC_I                        Cycle count: 97 
+                                                        
+980000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+980000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+980000.00ns INFO     cocotb.BC_I                        Cycle count: 98 
+                                                        
+990000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+990000.00ns INFO     cocotb.BC_I                         
+                                                          PC: 000000011011	 0x1b
+                                                            AR: 000000000001	 0x1
+                                                            IR: 0111000000000001	 0x7001
+                                                            AC: 0000000000000001	 0x1
+                                                            DR: 0000000000000000	 0x0
+                                                             TR: 0000000000001011	 0xb
+                                                         
+990000.00ns INFO     cocotb.BC_I                        Cycle count: 99 
+                                                        
+1000000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+1000000.00ns INFO     cocotb.BC_I                         
+                                                           PC: 000000011011	 0x1b
+                                                             AR: 000000000001	 0x1
+                                                             IR: 0111000000000001	 0x7001
+                                                             AC: 0000000000000001	 0x1
+                                                             DR: 0000000000000000	 0x0
+                                                              TR: 0000000000001011	 0xb
+                                                          
+1000000.00ns INFO     cocotb.BC_I                        Cycle count: 100 
+                                                         
+1010000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+1010000.00ns INFO     cocotb.BC_I                         
+                                                           PC: 000000011011	 0x1b
+                                                             AR: 000000000001	 0x1
+                                                             IR: 0111000000000001	 0x7001
+                                                             AC: 0000000000000001	 0x1
+                                                             DR: 0000000000000000	 0x0
+                                                              TR: 0000000000001011	 0xb
+                                                          
+1010000.00ns INFO     cocotb.BC_I                        Cycle count: 101 
+                                                         
+1020000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+1020000.00ns INFO     cocotb.BC_I                         
+                                                           PC: 000000011011	 0x1b
+                                                             AR: 000000000001	 0x1
+                                                             IR: 0111000000000001	 0x7001
+                                                             AC: 0000000000000001	 0x1
+                                                             DR: 0000000000000000	 0x0
+                                                              TR: 0000000000001011	 0xb
+                                                          
+1020000.00ns INFO     cocotb.BC_I                        Cycle count: 102 
+                                                         
+1030000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+1030000.00ns INFO     cocotb.BC_I                         
+                                                           PC: 000000011011	 0x1b
+                                                             AR: 000000000001	 0x1
+                                                             IR: 0111000000000001	 0x7001
+                                                             AC: 0000000000000001	 0x1
+                                                             DR: 0000000000000000	 0x0
+                                                              TR: 0000000000001011	 0xb
+                                                          
+1030000.00ns INFO     cocotb.BC_I                        Cycle count: 103 
+                                                         
+1040000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+1040000.00ns INFO     cocotb.BC_I                         
+                                                           PC: 000000011011	 0x1b
+                                                             AR: 000000000001	 0x1
+                                                             IR: 0111000000000001	 0x7001
+                                                             AC: 0000000000000001	 0x1
+                                                             DR: 0000000000000000	 0x0
+                                                              TR: 0000000000001011	 0xb
+                                                          
+1040000.00ns INFO     cocotb.BC_I                        Cycle count: 104 
+                                                         
+1050000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+1050000.00ns INFO     cocotb.BC_I                         
+                                                           PC: 000000011011	 0x1b
+                                                             AR: 000000000001	 0x1
+                                                             IR: 0111000000000001	 0x7001
+                                                             AC: 0000000000000001	 0x1
+                                                             DR: 0000000000000000	 0x0
+                                                              TR: 0000000000001011	 0xb
+                                                          
+1050000.00ns INFO     cocotb.BC_I                        Cycle count: 105 
+                                                         
+1060000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+1060000.00ns INFO     cocotb.BC_I                         
+                                                           PC: 000000011011	 0x1b
+                                                             AR: 000000000001	 0x1
+                                                             IR: 0111000000000001	 0x7001
+                                                             AC: 0000000000000001	 0x1
+                                                             DR: 0000000000000000	 0x0
+                                                              TR: 0000000000001011	 0xb
+                                                          
+1060000.00ns INFO     cocotb.BC_I                        Cycle count: 106 
+                                                         
+1070000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+1070000.00ns INFO     cocotb.BC_I                         
+                                                           PC: 000000011011	 0x1b
+                                                             AR: 000000000001	 0x1
+                                                             IR: 0111000000000001	 0x7001
+                                                             AC: 0000000000000001	 0x1
+                                                             DR: 0000000000000000	 0x0
+                                                              TR: 0000000000001011	 0xb
+                                                          
+1070000.00ns INFO     cocotb.BC_I                        Cycle count: 107 
+                                                         
+1080000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+1080000.00ns INFO     cocotb.BC_I                         
+                                                           PC: 000000011011	 0x1b
+                                                             AR: 000000000001	 0x1
+                                                             IR: 0111000000000001	 0x7001
+                                                             AC: 0000000000000001	 0x1
+                                                             DR: 0000000000000000	 0x0
+                                                              TR: 0000000000001011	 0xb
+                                                          
+1080000.00ns INFO     cocotb.BC_I                        Cycle count: 108 
+                                                         
+1090000.00ns INFO     cocotb.BC_I                        ************ DUT Signals ***************
+1090000.00ns INFO     cocotb.BC_I                         
+                                                           PC: 000000011011	 0x1b
+                                                             AR: 000000000001	 0x1
+                                                             IR: 0111000000000001	 0x7001
+                                                             AC: 0000000000000001	 0x1
+                                                             DR: 0000000000000000	 0x0
+                                                              TR: 0000000000001011	 0xb
+                                                          
+1090000.00ns INFO     cocotb.BC_I                        Cycle count: 109 
+                                                         
+1090000.00ns INFO     cocotb.BC_I                        BC I test ended successfully!
+1090000.00ns INFO     cocotb.regression                  basic_computer_test passed
+1090000.00ns INFO     cocotb.regression                  *********************************************************************************************
+                                                         ** TEST                                 STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                         *********************************************************************************************
+                                                         ** cocotb_bc1_test.basic_computer_test   PASS     1090000.00           0.03   42158862.47  **
+                                                         *********************************************************************************************
+                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                   1090000.00           0.09   12148034.66  **
+                                                         *********************************************************************************************
+                                                         
+make[1]: Leaving directory '/home/zado/Projects/School/EE445/HDL HW/tests'

@@ -1,6 +1,6 @@
 // Sequence counter module
 module SC #(
-    parameter W = 4
+    parameter integer W = 4
 ) (
     input clk,
     input reset,
@@ -8,9 +8,9 @@ module SC #(
 
     output reg [W-1:0] count
 );
-initial begin
+  initial begin
     count = 0;
-end
+  end
 
 
   always @(posedge clk) begin

@@ -106,8 +106,8 @@ module Datapath(
       .clk(clk),
       .reset(IEN_clear),
       .write(IEN_set),
-      .increment(0),
-      .DATA(1),
+      .increment(1'b0),
+      .DATA(1'b1),
       .A(IEN)
   );
 
@@ -163,9 +163,9 @@ module Datapath(
       .W(16)
   ) IR_reg (
       .clk(clk),
-      .reset(0),
+      .reset(1'b0),
       .write(IR_write),
-      .increment(0),
+      .increment(1'b0),
       .DATA(data_out),
       .A(IR)
   );
@@ -186,9 +186,9 @@ module Datapath(
       .W(8)
   ) OUTR_reg (
       .clk(clk),
-      .reset(0),
+      .reset(1'b0),
       .write(OUTR_write),
-      .increment(0),
+      .increment(1'b0),
       .DATA(),
       .A(OUTR)
   );
@@ -197,9 +197,9 @@ module Datapath(
       .W(8)
   ) INPR_reg (
       .clk(clk),
-      .reset(0),
-      .write(0),
-      .increment(0),
+      .reset(1'b0),
+      .write(1'b0),
+      .increment(1'b0),
       .DATA(),
       .A(INPR)
   );

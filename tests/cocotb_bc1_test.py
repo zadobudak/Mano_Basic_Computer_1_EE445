@@ -3,7 +3,7 @@ from cocotb.triggers import Timer
 from cocotb.clock import Clock
 from cocotb.triggers import FallingEdge
 
-DEBUG = True
+DEBUG = False
 def print_my_computer_please(dut):
     dut._log.info("************ DUT Signals ***************")
     dut._log.info(f" \n  PC: {dut.PC.value}\t {hex(dut.PC.value)}\n\
@@ -22,7 +22,6 @@ async def basic_computer_test(dut):
     #Get the fallin edge to work with
     clkedge = FallingEdge(dut.clk)
     
-    #Check your design for however many cycles, assert at correct clock cycles
     for cycle in range(110):
         await clkedge
         
@@ -30,6 +29,7 @@ async def basic_computer_test(dut):
         if DEBUG:
             print_my_computer_please(dut)
             
+        # INTERRUPTS
         if cycle == 10 :
             dut.FGI.value = 1
             

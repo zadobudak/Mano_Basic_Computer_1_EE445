@@ -124,7 +124,7 @@ module BC_I (
       .E(E),  //
       .IEN(IEN),  //
       .FGI(FGI),  //
-      .FGO(0),  // no output functionality
+      .FGO(1'b0),  // no output functionality
 
       .MEM_write(MEM_write),  //
 
