@@ -166,11 +166,12 @@ module Controller (
 
   assign PC_write = (D[4] & T[4]) | (D[5] & T[5]);  // calculation for PC write
   assign PC_clear = 0;  // always 0 since no interrupt is implemented
-  assign PC_increment = T[1] | (D[6] & T[6] & (databus == 0)) |
-                        (reg_ref & ((IR[4] & (~databus[15])) | 
-                                    (IR[5] & databus[15]) |
-                                    (IR[6] & (databus == 0)) |
-                                    (IR[7] & E)));
+  assign PC_increment = (T[1] & (~R)) |
+                        (D[6] & T[6] & (databus == 16'd0)) |
+                        (reg_ref & ((IR[4] & (~databus[15])) |
+                                    (IR[3] & databus[15]) |
+                                    (IR[2] & (databus == 0)) |
+                                    (IR[1] & E)));
 
   assign DR_write = T[4] & (D[0] | D[1] | D[2] | D[6]);  // calculation for DR write
   assign DR_clear = 0;  // always 0 since no interrupt is implemented
@@ -209,6 +210,10 @@ module Controller (
                                     (D[6] & T[6]) |
                                     reg_ref |
                                     in_out ;
+  assign OUTR_write = 0;  //since no I/O is implemented
+  
+  assign I_set = (~R) & T[2];
+  assign I_clear = 0;
 
   always @(posedge clk) begin
 
@@ -286,13 +291,5 @@ module Controller (
 
 
   end
-
-
-
-
-
-
-
-
 
 endmodule

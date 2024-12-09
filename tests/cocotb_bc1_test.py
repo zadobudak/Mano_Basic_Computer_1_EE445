@@ -10,12 +10,12 @@ DEBUG = True
 def print_my_computer_please(dut):
     #Log whatever signal you want from the datapath, called before positive clock edge
     dut._log.info("************ DUT Signals ***************")
-    # dut._log.info(f" PC: {dut.PC.value}\t {hex(dut.PC.value)}\n\
-    # AR: {dut.AR.value}\t {hex(dut.AR.value)}\n\
-    # IR: {dut.IR.value}\t {hex(dut.IR.value)}\n\
-    # AC: {dut.AC.value}\t {hex(dut.AC.value)}\n\
-    # DR: {dut.DR.value}\t {hex(dut.DR.value)}\n")
-    dut._log.info(dut.PC.value)
+    dut._log.info(f" \n  PC: {dut.PC.value}\t {hex(dut.PC.value)}\n\
+    AR: {dut.AR.value}\t {hex(dut.AR.value)}\n\
+    IR: {dut.IR.value}\t {hex(dut.IR.value)}\n\
+    AC: {dut.AC.value}\t {hex(dut.AC.value)}\n\
+    DR: {dut.DR.value}\t {hex(dut.DR.value)}\n")
+    # dut._log.info(dut.PC.value)
 
 @cocotb.test()
 async def basic_computer_test(dut):

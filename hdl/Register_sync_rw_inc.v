@@ -4,21 +4,21 @@ module Register_sync_rw_inc #(
     input clk,
     reset,
     write,
-	increment,
+    increment,
     input [W-1:0] DATA,
     output reg [W-1:0] A
 );
-initial begin
+  initial begin
     A = 0;
 
-end
+  end
 
   always @(posedge clk) begin
     case (reset)
       1'b0: begin
         if (write == 1'b1) A <= DATA;
-		else if (increment == 1'b1) A <= A + 1;
-		else A <= A;
+        else if (increment == 1'b1) A <= A + 1;
+        else A <= A;
       end
       1'b1: A <= 0;
       default: A <= 0;

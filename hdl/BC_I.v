@@ -86,6 +86,9 @@ module BC_I (
       .TR_increment(TR_increment),  //
       .TR_clear(TR_clear),  //
 
+      .IEN_set  (IEN_set),   //
+      .IEN_clear(IEN_clear), //
+
       .OUTR_write(OUTR_write),  //
       .data_out(BUS),  //
 

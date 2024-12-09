@@ -31,6 +31,9 @@ module Datapath(
     input TR_clear,
 
     input OUTR_write,
+    
+    input IEN_set,
+    input IEN_clear,
     output reg [15:0] data_out,
 
     output [11:0] PC,
@@ -86,7 +89,7 @@ module Datapath(
   ) E_reg (
       .clk(clk),
       .reset(0),
-      .write(0),
+      .write(AC_write),
       .increment(0),
       .DATA(ALU_CO),
       .A(E)
@@ -97,10 +100,10 @@ module Datapath(
       .W(1)
   ) IEN_reg (
       .clk(clk),
-      .reset(0),
-      .write(0),
+      .reset(IEN_clear),
+      .write(IEN_set),
       .increment(0),
-      .DATA(),
+      .DATA(1),
       .A(IEN)
   );
 
