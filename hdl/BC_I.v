@@ -44,6 +44,9 @@ module BC_I (
   wire IEN_set;
   wire IEN_clear;
 
+  wire E_increment;
+  wire E_clear;
+
   wire [2:0] ALU_SEL;
 
   wire [2:0] BUS_SEL;
@@ -91,6 +94,9 @@ module BC_I (
 
       .OUTR_write(OUTR_write),  //
       .data_out(BUS),  //
+
+      .E_clear(E_clear),  //
+      .E_increment(E_increment),  //
 
       .E  (E),   //
       .IEN(IEN), //
@@ -144,6 +150,9 @@ module BC_I (
 
       .IEN_set  (IEN_set),
       .IEN_clear(IEN_clear),
+
+      .E_clear(E_clear),
+      .E_increment(E_increment),
 
       .ALU_SEL(ALU_SEL),
 

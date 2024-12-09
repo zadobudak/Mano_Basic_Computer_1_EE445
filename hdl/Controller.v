@@ -30,6 +30,9 @@ module Controller (
     output reg TR_write,
     output reg TR_increment,
     output reg TR_clear,
+    
+    output reg E_clear,
+    output reg E_increment,
 
     output reg OUTR_write,
 
@@ -146,7 +149,7 @@ module Controller (
 
 
   // ----- Read signals for BUS -----
-  assign mem_read = (reg_ref) | (T[1] & (~R)) | ((D[0] | D[1] | D[2] | D[6]) & T[4]);
+  assign mem_read = (ind_ref) | (T[1] & (~R)) | ((D[0] | D[1] | D[2] | D[6]) & T[4]);
   assign ar_read = (D[4] & T[4]) | (D[5] & T[5]);
   assign pc_read = (T[0] & (~R)) | (D[5] & T[4]);
   assign dr_read = (D[2] & D[5]) | (D[6] & T[6]);
@@ -160,7 +163,7 @@ module Controller (
 
   // write clear and increment signals for different registers
 
-  assign AR_write = T[0] | T[2] | ind_ref;  // calculation for AR write
+  assign AR_write = ((~R) & T[0]) | ((~R) & T[2]) | ind_ref;  // calculation for AR write
   assign AR_clear = 0;  // always 0 since no interrupt is implemented
   assign AR_increment = D[5] & T[4];
 
@@ -171,15 +174,18 @@ module Controller (
                         (reg_ref & ((IR[4] & (~databus[15])) |
                                     (IR[3] & databus[15]) |
                                     (IR[2] & (databus == 0)) |
-                                    (IR[1] & E)));
+                                    (IR[1] & ~E)));
 
   assign DR_write = T[4] & (D[0] | D[1] | D[2] | D[6]);  // calculation for DR write
   assign DR_clear = 0;  // always 0 since no interrupt is implemented
   assign DR_increment = D[6] & T[5];
 
   assign AC_write = (T[5] & (D[0] | D[1] | D[2])) | (reg_ref & (IR[6] | IR[7] | IR[9]));  // calculation for AC write
-  assign AC_clear = reg_ref & IR[11];  // always 0 since no interrupt is implemented
+  assign AC_clear = reg_ref & IR[11];  
   assign AC_increment = reg_ref & IR[5];
+  
+  assign E_clear = reg_ref & IR[10];
+  assign E_increment = reg_ref & IR[8];
 
   assign IR_write = (~R) & T[1];
 
@@ -288,6 +294,7 @@ module Controller (
     $display("SC_clear: %b", SC_clear);
     $display("SC_increment: %b", SC_increment);
     $display("R: %b", R);
+    $display("I: %b", I);
 
 
   end
