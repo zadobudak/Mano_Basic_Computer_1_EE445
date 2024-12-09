@@ -9,7 +9,7 @@ module DFF (
     Q = 0;
   end
 
-  always @(posedge clock, posedge clear)
+  always @(posedge clock)
     if (clear) begin
       Q <= 0;
     end else if (enable) begin

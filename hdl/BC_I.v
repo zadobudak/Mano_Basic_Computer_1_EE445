@@ -6,7 +6,8 @@ module BC_I (
     output [11:0] AR,
     output [15:0] IR,
     output [15:0] AC,
-    output [15:0] DR
+    output [15:0] DR,
+    output [15:0] TR
 );
 
 
@@ -55,13 +56,15 @@ module BC_I (
 
   wire E;
   wire IEN;
+  wire S;
 
-
+  wire sys_clk;
+  assign sys_clk = S & clk;
 
   // Instantiate your datapath and controller here, then connect them.
 
   Datapath datapath (
-      .clk(clk),  //
+      .clk(sys_clk),  //
       .BUS_SEL(BUS_SEL),  //
       .ALU_SEL(ALU_SEL),  //
 
@@ -107,7 +110,8 @@ module BC_I (
       .DR(DR),  //
       .IR(IR),  //
       .PC(PC),  //
-      .AR(AR)   //
+      .AR(AR),   //
+      .TR(TR)   //
 
 
   );
@@ -156,7 +160,8 @@ module BC_I (
 
       .ALU_SEL(ALU_SEL),
 
-      .BUS_SEL(BUS_SEL)
+      .BUS_SEL(BUS_SEL),
+      .S(S)
 
 
   );

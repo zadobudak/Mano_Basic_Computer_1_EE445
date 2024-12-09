@@ -29,7 +29,7 @@ module ALU #(
       TRANSFER: temp[W-1:0] = DR;
       COMPLEMENT: temp[W-1:0] = ~AC;
       SHIFT_RIGHT: temp[W-1:0] = {E, AC[W-1:1]};
-      SHIFT_LEFT: temp[W-1:0] = {AC[W-1:1], E};
+      SHIFT_LEFT: temp[W-1:0] = {AC[W-2:0], E};
       default: temp = 17'b0;
     endcase
 

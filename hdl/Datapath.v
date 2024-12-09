@@ -44,13 +44,14 @@ module Datapath(
     output [15:0] IR,
     output [15:0] AC,
     output [15:0] DR ,
+    output [15:0] TR,
     output E ,
     output IEN
 );
 
 
   wire [15:0] MEM;
-  wire [15:0] TR;
+//   wire [15:0] TR;
   wire [7:0] OUTR;
   wire [7:0] INPR;
   wire [15:0] ALU_RES;
